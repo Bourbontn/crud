@@ -12,23 +12,20 @@ export class FormcrudComponent implements OnInit {
   visible: boolean = false;
   dialogVisible: boolean = false;
   selectedItem: string = '';
-  majors = [
-    { name: "KTPM", value: 1 },
-    { name: "CNTT", value: 2 },
-    { name: "TKDH", value: 3 },
-    { name: "TMDT", value: 4 },
-  ];
 
   items: any;
 
   constructor(
     private formcrudService: FormcrudService,
-
   ) { }
 
   async ngOnInit() {
     await this.loadData();
   }
+  loadData() {
+    this.items = this.formcrudService.getData();
+  }
+
   //open form create
   openDialog() {
     this.dialogVisible = true;
@@ -47,14 +44,7 @@ export class FormcrudComponent implements OnInit {
     this.visible = false;
   }
 
-  loadData() {
-    this.items = this.formcrudService.getData();
-  }
-  saveData(data: any) {
-    this.formcrudService.addData(data);
-    this.loadData();
-    this.onDialogClosed();
-  }
+
   deleteData(dt: any) {
     this.formcrudService.deleteData(dt);
     this.loadData();

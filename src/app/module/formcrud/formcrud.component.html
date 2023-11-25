@@ -26,6 +26,6 @@
   </ng-template>
 </p-table>
 
-<app-dialog  [visible]="dialogVisible" (closeDialogEvent)="onDialogClosed()" (saveItem)="saveData($event)" ></app-dialog>
+<app-dialog  [visible]="dialogVisible" (closeDialogEvent)="onDialogClosed()" (dataSavedEvent)="loadData()" ></app-dialog>
 
 <app-updateDialog *ngIf="selectedItem" [visible]="visible" [itemFullName]="selectedItem"  (closeFormEdit)="closeFormEdit()"  (newItem)="updateData()" ></app-updateDialog>

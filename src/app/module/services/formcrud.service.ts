@@ -6,18 +6,18 @@ import { Injectable } from '@angular/core';
 export class FormcrudService {
 
   getData() {
-    const data = JSON.parse(localStorage.getItem('products') || '{}');
+    const data = JSON.parse(localStorage.getItem('products') || '[]');
     return data;
   }
 
   addData(dt: any) {
-    const data = JSON.parse(localStorage.getItem('products') || '{}');
+    const data = JSON.parse(localStorage.getItem('products') || '[]');
     data.push(dt);
     localStorage.setItem('products', JSON.stringify(data));
   }
 
   updateData(oldData: any, newData: any) {
-    const data = JSON.parse(localStorage.getItem('products') || '{}');
+    const data = JSON.parse(localStorage.getItem('products') || '[]');
     for (let i = 0; i < data.length; i++) {
       if (data[i].fullname === oldData) {
         data[i] = newData;
