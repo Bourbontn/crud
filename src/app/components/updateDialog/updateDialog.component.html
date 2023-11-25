@@ -1,0 +1,26 @@
+<p-dialog header="Sửa thông tin" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw'}" [draggable]="false"
+  [resizable]="false">
+
+  <form [formGroup]="formData">
+    <div class="card" style="padding: 20px; height: 350px;">
+      <div class="row mb-2">
+        <div class="col">
+          <label class="txt-label" for="">Họ và tên:</label>
+          <input type="text" formControlName="fullname" placeholder="Họ và tên" class="p-inputtext p-component p-element" style="width: 100%;">
+        </div>
+        <div class="col">
+          <label class="txt-label" for="">Ngày sinh:</label>
+          <input type="date" formControlName="birthdate" class="p-inputtext p-component p-element " style="width: 100%;">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <label class="txt-label" for="">Ngành học</label>
+        <input type="text" formControlName="major" placeholder="" class="p-inputtext p-component p-element" style="width: 100%;" formControlName="major">
+      </div>
+      <div class="row mb-2">
+        <button pButton type="button" label="Cập nhật" class="p-button-success mr-2" (click)="updateData()" ></button>
+        <button pButton type="button" label="Huỷ bỏ" class="p-button-warning" (click)="closedForm()"></button>
+      </div>
+    </div>
+  </form>
+</p-dialog>
