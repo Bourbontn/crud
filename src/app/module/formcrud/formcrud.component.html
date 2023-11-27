@@ -15,12 +15,12 @@
   </ng-template>
   <ng-template pTemplate="body" let-items>
     <tr>
-      <td>{{items.fullname}}</td>
-      <td>{{items.birthdate | date: 'dd/MM/YYYY'}} </td>
+      <td>{{items.fullName}}</td>
+      <td>{{items.birthDate | date: 'dd/MM/YYYY'}} </td>
       <td>{{items.major}}</td>
       <td>
-        <button (click)="openFormEdit(items.fullname)" >Sửa</button>
-        <button (click)="deleteData(items.fullname)">Xoá</button>
+        <button (click)="openFormEdit(items.fullName)" >Sửa</button>
+        <button (click)="deleteData(items.fullName)">Xoá</button>
       </td>
     </tr>
   </ng-template>

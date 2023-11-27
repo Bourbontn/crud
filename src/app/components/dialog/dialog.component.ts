@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormcrudService } from 'src/app/module/services/formcrud.service';
 @Component({
   selector: 'app-dialog',
@@ -18,8 +18,8 @@ export class DialogComponent implements OnInit {
 
   ) {
     this.formData = this.formBuilder.group({
-      fullname: [''],
-      birthdate: [''],
+      fullName: ['', Validators.required],
+      birthDate: [''],
       major: [''],
     })
   }

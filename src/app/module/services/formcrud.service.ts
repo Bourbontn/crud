@@ -18,18 +18,20 @@ export class FormcrudService {
 
   updateData(oldData: any, newData: any) {
     const data = JSON.parse(localStorage.getItem('products') || '[]');
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].fullname === oldData) {
-        data[i] = newData;
+
+    const updateData = data.map((item: any) => {
+      if (item.fullName === oldData) {
+        item = newData;
       }
-    }
-    localStorage.setItem('products', JSON.stringify(data));
+      return item;
+    })
+    localStorage.setItem('products', JSON.stringify(updateData));
   }
 
   deleteData(dt: string) {
     const data = JSON.parse(localStorage.getItem('products') || '{}');
     for (let i = 0; i < data.length; i++) {
-      if (data[i].fullname === dt) {
+      if (data[i].fullName === dt) {
         data.splice(i, 1);
       }
     }

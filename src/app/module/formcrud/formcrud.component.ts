@@ -35,9 +35,9 @@ export class FormcrudComponent implements OnInit {
     this.dialogVisible = false;
   }
   //open form edit
-  openFormEdit(fullname: string) {
+  openFormEdit(fullName: string) {
     this.visible = true;
-    this.selectedItem = fullname;
+    this.selectedItem = fullName;
   }
 
   closeFormEdit() {

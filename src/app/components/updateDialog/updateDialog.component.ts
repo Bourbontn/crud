@@ -18,8 +18,8 @@ export class UpdateDialogComponent implements OnInit {
     private formcrudService: FormcrudService,
   ) {
     this.formData = this.formBuilder.group({
-      fullname: [''],
-      birthdate: [''],
+      fullName: [''],
+      birthDate: [''],
       major: [''],
     })
   }
@@ -36,11 +36,11 @@ export class UpdateDialogComponent implements OnInit {
 
   loadDataUpdate() {
     if (this.itemFullName != null) {
-      const data = this.formcrudService.getData().find((data: any) => data.fullname === this.itemFullName);
+      const data = this.formcrudService.getData().find((data: any) => data.fullName === this.itemFullName);
       // console.log(data);
       this.formData.reset({
-        fullname: data['fullname'] ? data['fullname'] : '',
-        birthdate: data['birthdate'] ? data['birthdate'] : '',
+        fullName: data['fullName'] ? data['fullName'] : '',
+        birthDate: data['birthDate'] ? data['birthDate'] : '',
         major: data['major'] ? data['major'] : '',
       })
     }
